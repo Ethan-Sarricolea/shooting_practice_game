@@ -28,22 +28,19 @@ Puntaje por objetivo:
 Implementar opciones a la ventana de pausa
 Agregar dificultades:
     Ciudadano  (Normal)
-    Aficionado
-    Experto
+    Aficionado (Sin agregar)
+    Experto (Sin agregar)
 
 ### Defectos:
 No se puede salir sin terminar el juego
-
 
 ## Instalación
 
 Para instalar este proyecto, sigue estos pasos:
 
-1. Clona el repositorio: `git clone https://github.com/tu-usuario/mi-proyecto.git`
-2. Navega al directorio del proyecto: `cd mi-proyecto`
-3. Ejecuta `npm install` para instalar las dependencias.
+1. Clona el repositorio: `git clone https://github.com/Ethan-Sarricolea/shooting_practice_game.git`
+2. Navega al directorio del proyecto: `cd shooting_practice_game`
 
 ## Uso
 
-Puedes utilizar este proyecto ejecutando el siguiente comando:
-python main.py
+Ejecución desde el archivo main.py
