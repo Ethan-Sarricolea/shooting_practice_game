@@ -1,12 +1,22 @@
 # Proyecto - Shooting Practice
 
-Este proyecto es un videojuego de mecanica simple para cualquier usuario, el usuario debe maneara a un personaje
+Este proyecto es un videojuego de mecanica simple para cualquier usuario, el usuario debe manejar a un personaje
 que esta en una zona de practica de tiro. Su objetivo es conseguir la cantidad indicada de puntos, disparando a los
 objetivos en la sala.
 
 ### Objetivos generales:
 
 Crear funciones basicas para el funcionamiento del proyecto
+
+### Objetivos secundarios
+
+Implementar opciones a la ventana de pausa
+Agregar dificultades:
+    Ciudadano  (Normal)
+    Aficionado (Sin agregar)
+    Experto (Sin agregar)
+
+### Funcionamiento
 
 Instrucciones:
     Desplazate y dispara a los objetivos para conseguir puntos y ganar, pero ten cuidado,
@@ -22,14 +32,6 @@ Puntaje por objetivo:
     Color rojo = -10 puntos
     Color amarillo = +5 puntos
     color verde = +10 puntos
-
-### Objetivos secundarios
-
-Implementar opciones a la ventana de pausa
-Agregar dificultades:
-    Ciudadano  (Normal)
-    Aficionado (Sin agregar)
-    Experto (Sin agregar)
 
 ### Defectos:
 No se puede salir sin terminar el juego
