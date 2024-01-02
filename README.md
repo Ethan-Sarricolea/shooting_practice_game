@@ -38,7 +38,7 @@ No se puede salir sin terminar el juego
 
 ## Instalación
 
-Para instalar este proyecto, sigue estos pasos:
+Para instalar este proyecto, sigue los siguientes pasos pasos desde la terminal o simbolo de sistema:
 
 1. Clona el repositorio: `git clone https://github.com/Ethan-Sarricolea/shooting_practice_game.git`
 2. Navega al directorio del proyecto: `cd shooting_practice_game`
