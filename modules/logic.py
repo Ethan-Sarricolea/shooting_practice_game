@@ -44,7 +44,6 @@ class logicgame:
         while continuar:
             self.objetivo_pos = self.pos_aleatoria()
             self.objetivo_color = self.color_aleatorio()
-            print(self.objetivo_color,self.objetivo_pos)
             time.sleep(3)
             if self.puntajeNum>=self.puntajeMaximo:
                 continuar = False
