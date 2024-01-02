@@ -45,5 +45,5 @@ Para instalar este proyecto, sigue estos pasos:
 
 ## Uso
 
-Ejecutar el archivo main.py desde terminal con el siguiente comando:
-python main.py
+3. Ejecutar el archivo main.py desde terminal con el siguiente comando:
+`python main.py`
