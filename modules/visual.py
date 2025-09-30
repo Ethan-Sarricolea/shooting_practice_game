@@ -15,6 +15,7 @@ Autor: Sarricolea Cortés Ethan Yahel
 import pygame
 from modules import logicgame
 from threading import Thread,Lock
+import sys
 
 #Colors // https://htmlcolorcodes.com/es/
 white = (255,255,255)
@@ -126,6 +127,7 @@ class visualgame:
 
                     if event.type == pygame.QUIT:                   #Cerrar el juego
                         running = False
+                        sys.exit()
 
                     elif event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_q:                 # Al presionar la tecla Q

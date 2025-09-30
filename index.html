@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Shooting Practice</title>
+        <!-- Importar Bootstrap desde la CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+
+    <body>
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/Ethan-Sarricolea/ethan-sarricolea.github.io/refs/heads/main/src/styles/style.css">
+        <link id="darkModeCss" rel="stylesheet" href="https://raw.githubusercontent.com/Ethan-Sarricolea/ethan-sarricolea.github.io/refs/heads/main/src/styles/darkmode.css">
+
+        <script src="https://raw.githubusercontent.com/Ethan-Sarricolea/ethan-sarricolea.github.io/refs/heads/main/src/scripts/makestructure.js"></script>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+        <!-- Barra de navegación básica -->
+        <header id="header">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+                <div class="container">
+                    <a class="navbar-brand" href="https://github.com/Ethan-Sarricolea">
+                        <img src="https://avatars.githubusercontent.com/u/144255690?v=4" alt="Mi Logo" class="d-inline-block align-text-top" style="height: 50px;">
+                    </a>
+                    <!-- Modo oscuro -->
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+                        <label class="form-check-label" for="darkModeSwitch" style="color: white;">Modo Oscuro</label>
+                    </div>
+                    
+                    <!-- Abrir navegacion -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Opciones de navegacion -->
+                    <div class="collapse navbar-collapse" id="menu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/proyectos.html">Proyectos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/conocimientos.html">Conocimientos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://ethans-superb-site-bd9053.webflow.io" target="_blank">Portafolio UX</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <style>
+            .code-container {
+                position: relative;
+                max-height: 250px; /* Altura inicial visible */
+                overflow: hidden;
+                border-radius: 8px;
+                transition: max-height 0.3s ease;
+            }
+
+            .code-container.expanded {
+                max-height: none; /* Al expandir, muestra todo */
+            }
+
+            .show-more {
+                display: block;
+                text-align: center;
+                background: #282a36;
+                color: #f8f8f2;
+                cursor: pointer;
+                padding: 8px;
+                font-family: sans-serif;
+                border-top: 1px solid #444;
+                transition: background 0.3s;
+            }
+
+            .show-more:hover {
+                background: #44475a;
+            }
+        </style>
+
+        <main class="container py-5">
+            <h1>Proyecto: Videojuego en Python</h1>
+
+            <p>
+                Este proyecto surge como proyecto final de mi materia de Logica durante los estudios
+                De ingeniería de software.
+            </p>
+
+            <h3>Modo de juego</h3>
+            <p>
+                En el juego, entras en el papel de un policia en una practica de disparo
+                Debes moverte y disparar a los objetivos, de acorde al color obtendras un mayor o menor puntaje.
+                <br>
+                Estos objetivos cambiaran de lugar y color de forma aleatoria, una vez alcanzado o sobrepasado el puntaje maximo (200) el juego termina.
+                <br>
+                En la barra superior se puede ver el mensaje y aun hay algunos mensajes en consola.
+            </p>
+            
+            <div style="text-align: center;">
+                <img src="modules/sources/example.png" alt="ejemplo">
+            </div>
+
+            <h3>Controles</h3>
+            <p>
+                <ul>
+                    <li>Esc: Para poner pausa al juego</li>
+                    <li>Q: Desplazarse una casilla a la isquierda</li>
+                    <li>E: Desplazarse una casilla a la derecha</li>
+                    <li>W: Disparar al objetivo</li>
+                </ul>
+
+                El juego cuenta con 3 objetivos diferenciados por colores:
+                <ul>
+                    <li>Verde: Suma 10 puntos</li>
+                    <li>Amarillo: Suma 5 puntos</li>
+                    <li>Rojo: Resta 10 puntos</li>
+                </ul>
+            </p>
+            <p>
+                Cuando se alcanza un puntaje igual o superior a 200 el juego termina y se muestra un
+                mensaje al usuario con su puntaje final.
+                <div style="text-align: center;">
+                    <img src="modules/sources/example2.png" alt="Puntaje final">
+                </div>
+            </p>
+
+            <h3>Estilo</h3>
+            <p>
+                El juego cuenta con un personaje simple, al estilo pixelart, además agregue los sonidos de disparos
+                y caminata durante el desplazamiento a los lados.
+            </p>
+
+            <div style="text-align: center;">
+                <img src="modules/sources/character.png" alt="Personaje">
+                <img src="modules/sources/character_shooting.png" alt="Personaje disparando">
+            </div>
+
+            <h3>Defectos</h3>
+            <p>
+                Por alguna razón que aún desconozco, no se puede cerrar el juego sin haberlo
+                terminado antes.
+            </p>
+
+            <h2>Instalación</h2>
+            <p>
+                Estos son los pasos de instalación:
+                <ol>
+                    <li>
+                        Clonar: <b>git clone ttps://github.com/Ethan-Sarricolea/shooting_practice_game.git </b>
+                    </li>
+                    <li>
+                        Navega al directorio del proyecto: <b>cd shooting_practice_game</b>
+                    </li>
+                </ol>
+            </p>
+
+            <h3>Uso</h3>
+            <p>Ejecutar el archivo main.py desde terminal con el siguiente comando: <b>python main.py</b></p>
+
+            <section>
+                <h2>Codigo</h2>
+                <p>El codigo tiene una estructura bastante simple</p>
+                <ul>
+                    <li>
+                        modules
+                        <ul>
+                            <li>
+                            sources
+                            <ul>
+                            <li>character_shooting.png</li>
+                            <li>character.png</li>
+                            <li>gun_sound_.mp3</li>
+                            <li>Running.mp3</li>
+                            </ul>
+                        </li>
+                        <li>__init__.py</li>
+                        <li>logic.py</li>
+                        <li>visual.py</li>
+                        </ul>
+                    </li>
+                    <li>main.py</li>
+                </ul>
+
+                <p>
+                    La estructura es sencilla, se divide en modulos, una carpeta de recursos con imagenes y sonidos
+                    y los codigos de la logica y parte visual.
+                </p>
+                <pre>
+                    <code class="language-python">
+import random
+import time
+from tkinter import messagebox
+
+class logicgame:
+    def __init__(self):
+        print("logicGame inicializado")
+        self.puntajeMaximo = 200
+        self.logicRunning = True
+        red = (255,0,0)
+        green = (0,255,0)
+        yellow = (255, 255, 0)
+        self.objetive_colors = [red,green,yellow]
+        column1 = 1
+        column2 = 2
+        column3 = 3
+        self.columnas = [column1,column2,column3]
+        
+        
+    def color_aleatorio(self):
+        self.random_color = random.choice(self.objetive_colors)
+        return self.random_color
+    
+    def pos_aleatoria(self):
+        self.columna_aleatoria = random.choice(self.columnas)
+        return self.columna_aleatoria
+    
+    def puntaje_a_texto(self,puntajeActual): #Conectada
+        self.puntajeNum = puntajeActual
+        self.puntajePrimerParte = "Puntaje: "
+        self.textPuntaje = self.puntajePrimerParte + str(self.puntajeNum)
+        return self.textPuntaje
+
+    def tiempo_espera(self,continuar):
+        while continuar:
+            self.objetivo_pos = self.pos_aleatoria()
+            self.objetivo_color = self.color_aleatorio()
+            time.sleep(3)
+            if self.puntajeNum>=self.puntajeMaximo:
+                continuar = False
+                print("Aleatoriedad terminada")
+                messagebox.showinfo("¡Victoria!",self.textPuntaje)
+                self.logicRunning = False
+        
+    def aparicion_objetivo(self,character_pos):
+        if character_pos == self.objetivo_pos:
+            return True
+        else:
+            return False
+                    </code>
+                </pre>
+            </section>
+            <p>
+                La parte logica se encarga de alternar el color y posición de el objetivo de forma aleatoria
+                Además calcula los puntajes y los retorna para mostrar en pantalla.
+                
+                Tambien detecta si el jugador esta disparando desde la columna de objetivo (para el conteo de los puntos).
+            </p>
+            <p>El codigo visual es mucho mas largo, pero a grandes rasgos, controla el ciclo y movimiento del personaje.</p>
+            <div class="code-container" id="codeBlock">
+            <pre>
+                <code class="language-python">
+import pygame
+from modules import logicgame
+from threading import Thread,Lock
+import sys
+
+#Colors // https://htmlcolorcodes.com/es/
+white = (255,255,255)
+red = (255,0,0)
+green = (0,255,0)
+yellow = (255, 255, 0)
+blue = (0,0,255)
+grey = (200,200,200)
+background_grey = (175, 175, 175 )
+doors_grey = (100, 115, 120 )
+floor_grey = (155, 155, 155)
+grey_dark = (75, 75, 75 )
+grey_bit_dark = (90,90,90)
+
+class visualgame:
+    def __init__(self,running,moduleLogic):
+        pygame.init()
+        pygame.mixer.init()
+        self.sonido_disparo = pygame.mixer.Sound("modules\sources\gun_sound.mp3")
+        self.sonido_correr = pygame.mixer.Sound("modules\sources\Running.mp3")
+        self.running = running
+        self.logicGame = moduleLogic
+        self.game_size = (700,600)
+        self.ventana = pygame.display.set_mode(self.game_size)
+        self.ventana.fill(background_grey)
+        pygame.display.set_caption("Shooting practice")
+        self.door1Color = doors_grey
+        self.door2Color = doors_grey
+        self.door3Color = doors_grey
+
+        self.continuar_hilo = True
+        self.hilo_accion = Thread(target=self.logicGame.tiempo_espera, args=(self.continuar_hilo,))
+        self.hilo_accion.start()
+
+        self.play_game(self.ventana,self.running,self.logicGame)
+
+    def background_game(self,ventana):
+        for i in range(0,701,100):
+                pygame.draw.line(ventana,color=floor_grey,start_pos=(i,0),end_pos=(i,600),width=10)
+        for i in range(0,601,100):
+            pygame.draw.line(ventana,color=floor_grey,start_pos=(0,i),end_pos=(700,i),width=10)
+
+        pygame.draw.rect(ventana,self.door1Color,[(106,106),(90,90)])
+        pygame.draw.rect(ventana,self.door2Color,[(306,106),(90,90)])
+        pygame.draw.rect(ventana,self.door3Color,[(506,106),(90,90)])
+        pygame.draw.line(ventana,color=grey_dark,start_pos=(0,450),end_pos=(700,450),width=30)
+
+
+    def play_game(self,ventana,running,logic):
+        self.logicgame = logic
+        self.puntajeNum = 0
+
+        self.textPuntaje = self.logicgame.puntaje_a_texto(self.puntajeNum)      #Funcion logica
+        self.background_game(ventana)
+
+        # Character / Personaje // https://es.pixilart.com/
+        character_image1 = pygame.image.load("modules\sources\character.png")
+        character_image2 = pygame.image.load("modules\sources\character_shooting.png")
+        character = character_image1
+        posX = 300
+        posY = 500
+        character_position = 2
+
+        change_start_time = 0
+        changing_image = False
+        self.pause_activo = False
+
+        font = pygame.font.Font(None, 36)
+        title_font = pygame.font.Font(None, 50)
+        puntaje_text = font.render(self.textPuntaje,True,white)
+        pause_text = title_font.render("Pausa",True,white)
+
+        clock = pygame.time.Clock()
+        while running:
+
+            ventana.blit(character,(posX,posY))
+            ventana.blit(puntaje_text,(25,25))
+
+            if self.pause_activo==False:                            #Si el juego NO esta en pausa
+                
+                if self.logicGame.objetivo_pos == 1:
+                    self.door1Color = self.logicGame.objetivo_color
+                    self.door2Color = doors_grey
+                    self.door3Color = doors_grey
+                    ventana.fill(background_grey)
+                    self.background_game(ventana)
+                    ventana.blit(character,(posX,posY))
+                    ventana.blit(puntaje_text,(25,25))
+
+                if self.logicGame.objetivo_pos == 2:
+                    self.door2Color = self.logicGame.objetivo_color
+                    self.door1Color = doors_grey
+                    self.door3Color = doors_grey
+                    ventana.fill(background_grey)
+                    self.background_game(ventana)
+                    ventana.blit(character,(posX,posY))
+                    ventana.blit(puntaje_text,(25,25))
+
+                if self.logicGame.objetivo_pos == 3:
+                    self.door3Color = self.logicGame.objetivo_color
+                    self.door2Color = doors_grey
+                    self.door1Color = doors_grey
+                    ventana.fill(background_grey)
+                    self.background_game(ventana)
+                    ventana.blit(character,(posX,posY))
+                    ventana.blit(puntaje_text,(25,25))
+
+                for event in pygame.event.get():
+
+                    if event.type == pygame.QUIT:                   #Cerrar el juego
+                        running = False
+                        sys.exit()
+
+                    elif event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_q:                 # Al presionar la tecla Q
+                            if (character_position>1):
+                                self.sonido_correr.play()
+                                character_position-=1
+                                posX-=200
+                                ventana.fill(background_grey)
+                                self.background_game(ventana)
+                            else:
+                                print("Llegaste al tope")
+
+                        if event.key == pygame.K_e:                 #Al presionar la tecla E
+                            if (character_position<3):
+                                self.sonido_correr.play()
+                                character_position+=1
+                                posX+=200
+                                ventana.fill(background_grey)
+                                self.background_game(ventana)
+                            else:
+                                print("Llegaste al tope")
+
+                        if event.key == pygame.K_w:                 #Al presionar la tecla w
+                            self.sonido_disparo.play()
+                            self.acierto = self.logicGame.aparicion_objetivo(character_position)    #Acierto
+                            if self.acierto:
+                                if self.logicGame.objetivo_color == red: 
+                                    self.puntajeNum -=10
+                                elif self.logicGame.objetivo_color == yellow:
+                                    self.puntajeNum +=5
+                                elif self.logicGame.objetivo_color == green:
+                                    self.puntajeNum +=10
+
+                            ventana.fill(background_grey)
+                            self.background_game(ventana)
+                            self.textPuntaje = self.logicgame.puntaje_a_texto(self.puntajeNum)      #Funcion logica
+                            puntaje_text = font.render(self.textPuntaje,True,white)
+                            changing_image = True
+                            change_start_time = pygame.time.get_ticks()
+
+                        if event.key == pygame.K_ESCAPE:            #Al presionar ESCAPE
+                            self.pause_activo = True
+                            pygame.draw.rect(ventana,grey_bit_dark,[(100,100),(500,400)])
+                            ventana.blit(pause_text,(300,150))
+
+            elif self.pause_activo==True:                           #Si el juego esta en pausa
+                for evento in pygame.event.get():
+                    if evento.type == pygame.QUIT:
+                          running=False
+                    if evento.type == pygame.KEYDOWN:  
+                        if evento.key == pygame.K_ESCAPE:
+                            self.pause_activo = False
+                            ventana.fill(background_grey)
+                            self.background_game(ventana)
+
+            if changing_image:                                                  # Si se presiono E se realiza el cambio de imagen
+                elapsed_time = pygame.time.get_ticks() - change_start_time      # Calcula el tiempo transcurrido
+                if elapsed_time < 25:                                           # Si no sobrepasa el limite se queda la imagen2
+                        character = character_image2
+                else:
+                        changing_image = False
+                        character = character_image1
+                        ventana.blit(character,(posX,posY))
+            
+            pygame.display.flip()
+            clock.tick(30)
+            if self.logicGame.logicRunning == False:
+                running = False
+
+        self.continuar_hilo = False
+        self.hilo_accion.join()
+        pygame.quit()
+                </code>
+            </pre>
+            </div>
+            <span class="show-more" id="toggleButton">Ver más ▼</span>
+
+            <p>
+                Hay muchas mejoras que aún se pueden realizar al codigo (sobretodo a visual.py) pero funciona
+                en terminos generales, bastante bien.
+            </p>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark container-fluid flex-grow-1" id="footer">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <div class="me-5 d-none d-lg-block"> <!-- izquierda -->
+                    <span style="color: white;">Mis redes sociales</span>
+                </div>
+                <!-- Derecha -->
+                <div class="row" style="color: white;">
+                    <a href="mailto:esarricolea@gmail.com" target="_blank"  class="me-4 text-reset" style="color: white;">
+                        <span class="fab fa-google"></span>
+                        <p>Correo de google</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ethan-sarricolea-cortes" target="_blank"class="me-4 text-reset" style="color: white;">
+                        <span class="fab fa-linkedin"></span>
+                        <p>LinkedIn</p>
+                    </a>
+                    <a href="https://github.com/Ethan-Sarricolea" target="_blank" class="me-4 text-reset">
+                        <span class="fab fa-github"></span>
+                        <p>GitHub</p>
+                    </a>
+                    <a href="https://www.coursera.org/user/1e1b962052cda4a15bc6f83414c9aed4" target="_blank"  class="me-4 text-reset" style="color: white;">
+                        <span class="fas fa-graduation-cap"></span>
+                        <p>Coursera</p>
+                    </a>
+                    <a href="https://www.domestika.org/es/spartandmx" target="_blank" class=" me-4 text-reset" style="color: white;">
+                        <span class="fa-solid fa-heart"></span>
+                        <p>Domestika</p>
+                    </a>
+                    <a href="https://www.credly.com/users/ethan-sarricolea" target="_blank" class="me-4 text-reset">
+                        <span class="fas fa-certificate"></span>
+                        <p>Credly</p>
+                    </a>
+                    <a href="https://omegaup.com/profile/Sarricolea_Ethan/" class="me-4 text-reset" target="_blank">
+                        <span style="text-decoration: none; display: inline-block;"><b>&Omega;Up</b></span>
+                        <p>OmegaUp</p>
+                    </a>
+                </div >
+                <!-- Copyright -->
+                <div class="text-center p-4 row" style="color: white; ">
+                    © 2025 Copyright:
+                    Ethan-Sarricolea
+                </div>
+            </section>
+        </footer>
+        
+        <script>
+            Prism.highlightAll();
+
+            const container = document.getElementById('codeBlock');
+            const toggle = document.getElementById('toggleButton');
+
+            toggle.addEventListener('click', () => {
+                const expanded = container.classList.toggle('expanded');
+                toggle.textContent = expanded ? 'Ver menos ▲' : 'Ver más ▼';
+            });
+        </script>
+        
+         <!-- Bootstrap JS (necesario para el menú responsive) -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
